@@ -1,7 +1,12 @@
 {
   "name": "ecommerce",
   "private": true,
-  "packageManager": "pnpm@9.12.0",
+
+  "engines": {
+    "node": "20.x"
+  },
+  "packageManager": "pnpm@9.15.4",
+
   "devDependencies": {
     "concurrently": "^9.0.0",
     "eslint": "^9.33.0",
