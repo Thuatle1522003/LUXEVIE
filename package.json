@@ -5,7 +5,11 @@
   "engines": {
     "node": "20.x"
   },
-  "packageManager": "pnpm@9.15.4",
+
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
 
   "devDependencies": {
     "concurrently": "^9.0.0",
@@ -15,8 +19,9 @@
     "knip": "^5.63.1",
     "turbo": "^2.5.6"
   },
+
   "scripts": {
-    "dev": "concurrently -n FE,BE -c green,blue \"pnpm --filter frontend dev\" \"pnpm --filter backend dev\"",
+    "dev": "concurrently -n FE,BE -c green,blue \"npm --workspace frontend run dev\" \"npm --workspace backend run dev\"",
     "build": "turbo run build",
     "lint": "turbo run lint",
     "format": "turbo run format",
